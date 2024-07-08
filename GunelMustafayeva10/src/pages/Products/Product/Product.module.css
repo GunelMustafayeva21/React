@@ -1,0 +1,21 @@
+.detailedPro{
+    width:100vw;
+    height: 60vh;
+    background-color: lightgray;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap:15px;
+    font-size: 15px;
+    font-weight: 900;
+    padding: 20px 0px;
+}
+.addToCardBtn{
+    width:100px;
+    height: 30px;
+    color:white;
+    background-color: grey;
+    border: none;
+    border-radius: 20px;
+}

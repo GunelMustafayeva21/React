@@ -1,0 +1,35 @@
+.head{
+    width:100vw;
+    height: 10vh;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 3px solid lightgray;
+    
+}
+.navbar{
+    width:80vw;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.link{
+    list-style-type: none;
+    color:grey;
+    font-size: 20px;
+    padding-left: 30px;
+}
+.themeBtn{
+    width:100px;
+    height: 30px;
+    border-radius: 15px;
+    border: none;
+    background-color: grey;
+    color:white;
+}
+.noneDecoration{
+
+    text-decoration: none;
+}

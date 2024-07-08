@@ -1,0 +1,10 @@
+.countContainer{
+  width:100vw;
+  height: 50vh;
+  background-color: pink;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  font-size: 60px;
+  color:grey;
+}

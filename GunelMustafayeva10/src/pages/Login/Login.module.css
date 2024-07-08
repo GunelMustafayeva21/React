@@ -1,0 +1,10 @@
+.login{
+    width:100vw;
+    height: 100vh;
+    background-color: rgb(66, 168, 88);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    color:white
+}

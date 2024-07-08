@@ -1,0 +1,10 @@
+.register{
+    width:100vw;
+    height: 100vh;
+    background-color: rgb(200, 54, 205);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    color:white
+}

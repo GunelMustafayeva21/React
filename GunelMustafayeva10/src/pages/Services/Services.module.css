@@ -1,0 +1,10 @@
+.services{
+    width:100vw;
+    height: 60vh;
+    display: flex;
+    background-color: rgb(74, 131, 150);
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    color:white
+}

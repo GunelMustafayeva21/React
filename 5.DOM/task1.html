@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+        }
+          #first{
+            width:200px;
+            height: 200px;
+            background-color: rosybrown;
+            border-radius: 20px;
+            margin-top: 20px;
+          }
+    </style>
+</head>
+<body>
+   <div id="first"></div>
+    <script>
+
+let first= document.getElementById("first");
+let seconds=0;
+let distance=0;
+
+function moveToRight(){
+    let interval=setInterval(() => {
+        if(seconds > 20){
+        seconds=0;
+        distance=0;
+        clearInterval(interval);
+        moveToRight();
+     }
+        seconds+=2;
+        first.style.marginLeft=distance+"px";
+        distance += 20;
+    }, 2000);
+    
+}
+
+moveToRight()
+    </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 12</title>
+    <style>
+         *{
+            margin: 0%;
+            padding: 0%;
+        }
+        .container{
+            
+            width:100vw;
+            height: 100vh;
+            background-color: pink;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        table, tr, td{
+            border:3px solid black;
+    
+        }
+        table{
+            width:500px;
+            height: 500px;
+            border-collapse: collapse;
+        }
+        td{
+            text-align: center;
+            font-size: 25px;
+            font-weight: 900;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <table id="numbers">
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+               
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+               
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+               
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+                <td>16</td>
+              
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        let cells= Array.from(document.querySelectorAll("td"));
+        let numbers=[];
+        cells.map((cell)=>{
+            numbers.push(Number(cell.innerText))
+        })
+        let max=numbers[0];
+        let min=numbers[0];
+       
+        for(let i=0; i<numbers.length; i++){
+           if(numbers[i]>max){
+            max=numbers[i]
+           }
+           if(numbers[i]<min){
+            min=numbers[i]
+           
+           }
+        }
+        cells.forEach((cell)=>{
+            if(cell.innerText==max){
+                cell.style.background="crimson";
+            }
+            if(cell.innerText==min){
+                cell.style.background="purple";
+            }
+        })
+
+    </script>
+</body>
+</html>

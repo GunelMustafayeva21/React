@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3</title>
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            font-weight: 900;
+            font-size: 20px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 50px;
+        }
+
+        #third {
+            border-radius: 20px;
+            width: 200px;
+            height: 200px;
+            background: rgb(66, 204, 163);
+            background: rgb(132, 94, 194);
+            background: linear-gradient(95deg, rgba(132, 94, 194, 1) 25%, rgba(179, 156, 208, 1) 50%, #00896F 75%);
+        }
+
+        button {
+            width: 100px;
+            height: 40px;
+            border: none;
+            border-radius: 30px;
+            color: white;
+
+        }
+
+        #start {
+            background-color: #845EC2;
+        }
+
+        #stop {
+            background-color: #00896F;
+        }
+
+        .buttons {
+            display: flex;
+            margin-left: 50px;
+            gap: 10px;
+        }
+
+        #text {
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            color: #00896F;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div id="third"></div>
+        <div class="buttons">
+            <button id="start">Start</button>
+            <button id="stop">Stop</button>
+            <div id="text"></div>
+        </div>
+
+    </div>
+    <script>
+
+        let startBtn = document.getElementById("start");
+        let stopBtn = document.getElementById("stop");
+        let third = document.getElementById("third");
+        let text = document.getElementById("text");
+
+        let firstInterval;
+        function startRotation() {
+            setTimeout(() => {
+                let degree = 90;
+                firstInterval = setInterval(() => {
+                    third.style.transform = `rotate(${degree}deg)`;
+                    degree += 90;
+                }, 2000)
+            }, 1000)
+        }
+
+        function stopRotation() {
+            clearInterval(firstInterval);
+            let count = 3;
+            text.textContent = `${count}`;
+            let secondInterval = setInterval(() => {
+                count--;
+                if (count > 0) {
+                    text.textContent = `${count}`;
+                } else {
+                    clearInterval(secondInterval);
+                    text.textContent = '';
+                }
+            }, 1000);
+        }
+        startBtn.addEventListener("click", startRotation)
+
+        stopBtn.addEventListener("click", stopRotation)
+    </script>
+</body>
+
+</html>

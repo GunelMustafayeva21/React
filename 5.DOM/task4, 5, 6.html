@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4, 5, 6</title>
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            background-color: lightblue;
+        }
+
+        #fourth {
+            width: 15vw;
+            height: 30vh;
+            background-color: pink;
+            border-radius: 20px;
+            position: absolute;
+            transition: 1s all ease;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="fourth"></div>
+    </div>
+    <script>
+        
+        let fourth = document.getElementById("fourth");
+
+        function storePosition(top, left) {
+            localStorage.setItem('elementPosition', JSON.stringify({ top: top, left: left }));
+        }
+        function applyPosition() {
+            const storedPosition = localStorage.getItem('elementPosition');
+            if (storedPosition) {
+                let result= JSON.parse(storedPosition);
+                fourth.style.top = result.top;
+                fourth.style.left = result.left;
+            }
+        }
+        applyPosition()
+    
+        
+        let clickCount = 0;
+        fourth.addEventListener("click", () => {
+           
+           
+            let positions = [
+                { top: 0 + "vh", left: 85 + "vw" },
+                { top: 70 + "vh", left: 85 + "vw" },
+                { top: 70 + "vh", left: 0 + "vw" },
+                { top: 0 + "vh", left: 0 + "vw" },
+            ]
+            
+            fourth.style.top = positions[clickCount].top;
+            fourth.style.left = positions[clickCount].left;
+            clickCount++;
+            storePosition(fourth.style.top,fourth.style.left )
+           
+            if (clickCount == positions.length) {
+                clickCount = 0;
+            }
+           
+        })
+
+        document.addEventListener('keydown', (e) => {
+            
+            if (e.code === "ArrowRight") {
+                fourth.style.left = 85 + "vw";
+                clickCount++;
+                storePosition(fourth.style.top,fourth.style.left )
+            }
+            if (e.code === "ArrowDown") {
+                fourth.style.top = 70 + "vh";
+                clickCount++;
+                storePosition(fourth.style.top,fourth.style.left )
+                
+            }
+            if (e.code === "ArrowLeft") {
+                fourth.style.left = 0 + "vw";
+                clickCount++;
+                storePosition(fourth.style.top,fourth.style.left )
+            }
+            if (e.code === "ArrowUp") {
+                fourth.style.top = 0 + "vh";
+                clickCount++;
+                storePosition(fourth.style.top,fourth.style.left )
+            }
+           
+           
+            
+        })
+        
+    </script>
+</body>
+
+</html>

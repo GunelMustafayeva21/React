@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 7</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+        }
+        .container{
+            width:100vw;
+            height: 100vh;
+            background-color: pink;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="pet.webp" id="pet">
+    </div>
+   
+    <script>
+        let animal= document.getElementById("pet");
+        document.addEventListener("keydown", (e)=>{
+            if (e.code === "Space") {
+                animal.style.paddingBottom=200+'px';
+                setTimeout(()=>{
+                    animal.style.paddingBottom=0+'px';
+                },600)
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 9</title>
+    <style>
+     *{
+            margin: 0%;
+            padding: 0%;
+        }
+        .container{
+            width:100vw;
+            height: 100vh;
+            background-color: pink;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap:50px;
+        }
+        #main{
+            width:10px;
+            height: 10px;
+            background-color: lightblue;
+        }
+        input{
+            width:200px;
+            height: 40px;
+            border-radius: 30px;
+            border: none;
+            outline: none;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="number" id="input" placeholder="Add Size">
+        <div id="main"></div>
+    </div>
+
+    <script>
+        let input = document.getElementById("input")
+        let div= document.getElementById("main")
+        input.addEventListener("input", ()=>{
+            let size= 10+Number(input.value);
+          main.style.width=size+"px";
+          main.style.height=size+"px";
+        })
+    </script>
+</body>
+</html>
